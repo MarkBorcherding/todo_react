@@ -1,7 +1,7 @@
 var TodoList = React.createClass({
 
   getInitialState: function() {
-    return {items: ["a"]}
+    return {items: ["a"]};
   },
 
   onCreateTodo: function(todo) {
@@ -15,12 +15,12 @@ var TodoList = React.createClass({
       return <div>{item}</div>;
     });
 
-    return <div>
-             <fieldset>
-              <legend>Items</legend>
-              {todoItems}
-             </fieldset>
-             <NewTodoItem onCreate={this.onCreateTodo} />
-           </div>;
+    return  <div>
+              <fieldset>
+                <legend>Items</legend>
+                {todoItems}
+              </fieldset>
+              <NewTodoItem onCreate={this.onCreateTodo} />
+            </div>;
   }
 });
