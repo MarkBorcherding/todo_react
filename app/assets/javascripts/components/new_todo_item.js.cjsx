@@ -11,9 +11,9 @@ window.NewTodoItem = React.createClass
     @props.onCreate @state.todo_text
 
   render: () ->
-    `<fieldset>
+    <fieldset>
         <legend>new</legend>
-        <input type="text" value={this.todo_text} onChange={this.changeText} />
-        <button onClick={this.createTodo}>create</button>
-     </fieldset>`
+        <input type="text" value={@todo_text} onChange={@changeText} />
+        <button onClick={@createTodo}>create</button>
+     </fieldset>
 

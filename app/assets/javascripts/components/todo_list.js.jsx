@@ -9,16 +9,24 @@ var TodoList = React.createClass({
     this.setState({ items:  this.state.items});
   },
 
+  destroy: function(){
+    // Just remove something for now.
+    this.state.items.pop();
+    this.setState({ items: this.state.items});
+  },
+
   render: function() {
 
     var todoItems = this.state.items.map(function(item) {
-      return <div>{item}</div>;
+      return <li><TodoItem item={item} destroy={this.destroy}/></li>;
     });
 
     return  <div>
               <fieldset>
                 <legend>Items</legend>
-                {todoItems}
+                <ul>
+                  {todoItems}
+                </ul>
               </fieldset>
               <NewTodoItem onCreate={this.onCreateTodo} />
             </div>;
